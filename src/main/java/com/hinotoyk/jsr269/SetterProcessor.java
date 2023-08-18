@@ -1,5 +1,6 @@
 package com.hinotoyk.jsr269;
 
+import com.google.auto.service.AutoService;
 import com.sun.source.tree.Tree;
 import com.sun.tools.javac.api.JavacTrees;
 import com.sun.tools.javac.code.Flags;
@@ -16,7 +17,7 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
 import java.util.Set;
-
+@AutoService(Processor.class)
 @SupportedAnnotationTypes("com.hinotoyk.jsr269.Setter")
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class SetterProcessor extends AbstractProcessor {

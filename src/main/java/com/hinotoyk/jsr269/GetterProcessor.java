@@ -1,5 +1,6 @@
 package com.hinotoyk.jsr269;
 
+import com.google.auto.service.AutoService;
 import com.sun.source.tree.Tree;
 import com.sun.tools.javac.api.JavacTrees;
 import com.sun.tools.javac.code.Flags;
@@ -17,6 +18,7 @@ import javax.tools.Diagnostic;
 import java.util.Set;
 
 //对Getter感兴趣
+@AutoService(Processor.class)
 @SupportedAnnotationTypes("com.hinotoyk.jsr269.Getter")
 //支持的版本，使用1.8就写这个
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
