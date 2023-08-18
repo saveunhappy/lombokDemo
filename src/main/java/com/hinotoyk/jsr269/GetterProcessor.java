@@ -79,7 +79,7 @@ public class GetterProcessor extends AbstractProcessor {
                         messager.printMessage(Diagnostic.Kind.NOTE, "get " + jcVariableDecl.getName() + " has been processed");
                         treeMaker.pos = jcVariableDecl.pos;
                         //类里的前面追加生成的Getter方法
-                        jcClassDecl.defs = jcClassDecl.defs.prepend(makeGetterMethodDecl(jcVariableDecl));
+                        jcClassDecl.defs = jcClassDecl.defs.append(makeGetterMethodDecl(jcVariableDecl));
                     });
                     super.visitClassDef(jcClassDecl);
                 }

@@ -58,7 +58,7 @@ public class SetterProcessor extends AbstractProcessor {
                     jcVariableDeclList.forEach(jcVariableDecl -> {
                         messager.printMessage(Diagnostic.Kind.NOTE, "set " + jcVariableDecl.getName() + " has been processed");
                         treeMaker.pos = jcVariableDecl.pos;
-                        jcClassDecl.defs = jcClassDecl.defs.prepend(makeSetterMethodDecl(jcVariableDecl));
+                        jcClassDecl.defs = jcClassDecl.defs.append(makeSetterMethodDecl(jcVariableDecl));
 
                     });
                     super.visitClassDef(jcClassDecl);
